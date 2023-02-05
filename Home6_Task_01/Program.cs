@@ -5,23 +5,22 @@
 //1, -7, 567, 89, 223-> 3
 
 //вводим через один Enter (разбиваем через Split())
-//-------------------------------------------------- (НЕ ЗАКОНЧЕНО!!!)
+//--------------------------------------------------
 
 
-int GetNumber()
+int[] GetNumber(int newstring)
 {
-    int[] array = new int[5];
-    int i = 0;
+    int[] array = new int[newstring];
 
-    for (i = 0; i < array.Length; i++)
+    for (int i = 0; i < newstring; i++)
     {
         Console.WriteLine("Введите любое число:");
         array[i] = Convert.ToInt32(Console.ReadLine());
     }
     Console.WriteLine("[{0}]", string.Join(", ", array));
-    return array[i];
+    return array;
 }
-//--------------------------------
+
 void CheckParity(int[] arr)
 {
     int count = 0;
@@ -32,6 +31,5 @@ void CheckParity(int[] arr)
     Console.Write($"Количество четных чисел -> {count}");
 }
 
-//--------------------------------
-int resultGetNumber = GetNumber();
-//CheckParity();
+int[] resultGetNumber = GetNumber(5);
+CheckParity(resultGetNumber);
